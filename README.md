@@ -37,4 +37,4 @@ This file could be used as an input for the `find_HomoPolymer.pl` script
 $ while read -r chr site
 >do
 >perl find_HomoPolymer.pl /path/hg19.fa "$chr" "$site" 4 >> Homopolymer_result.txt
-> done < chr_site.txt
+>done < chr_site.txt
