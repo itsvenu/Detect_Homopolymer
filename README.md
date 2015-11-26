@@ -26,3 +26,15 @@ chr1    978603  C       GCCCCTG Homo
 chr1    980460  G       GGGGGTA Homo
 chr1    981087  A       ATCACGT Non_Homo
 ```
+
+User can automate the script on all the variant sites in a `VCF file` with a `while` loop in `bash`.
+A file that contains `chromosome id` and `variant site` should be prepared from `VCF file` with a `bash one liner`
+
+`$ grep -v '^#' input.vcf | cut -f 1,2 > chr_site.txt`
+
+This file could be used as an input for the `find_HomoPolymer.pl` script
+```
+$ while read -r chr site
+>do
+>perl find_HomoPolymer.pl /path/hg19.fa "$chr" "$site" 4 >> Homopolymer_result.txt
+> done < chr_site.txt
