@@ -37,23 +37,3 @@ if ($doubt_homo =~ /$doubt_base_homopoly/){
 }else{
 	print "$chromosome_id\t$vcf_site\t$doubt_base\t$doubt_homo\tNon_Homo\n";
 }
-
-
-
-####### JUNK #######
-
-=CUT
-#print "$doubt_base_repeat\n";
-
-if($doubt_base_repeat_num >= 4){
-	print "$chromosome_id\t$vcf_site\t$doubt_base\t$doubt_homo\tHomo\n";
-}else{
-	print "$chromosome_id\t$vcf_site\t$doubt_base\t$doubt_homo\tNon_Homo\n";
-}
-
-
-#print substr($sequence, 0, 1);
-#my $length = $db->length('chr1');
-#print $length,"\n";
-#my $alphabet = $db->alphabet('chr1');
-#print $alphabet,"\n";
